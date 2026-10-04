@@ -10,4 +10,7 @@ wheels/
 .venv
 
 # project files..
+.env
 data/
+expenses.duckdb
+sandbox/
