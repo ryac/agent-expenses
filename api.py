@@ -10,16 +10,19 @@ import duckdb
 from dotenv import load_dotenv
 
 from agents import Agent, Runner, function_tool, trace
-from agents.mcp import MCPServerStdio
 import logging
 import threading
 from guardrails import validate_sql, UnsafeSQLError
 
 load_dotenv()
+logging.basicConfig(level=logging.INFO, filename="expenses.log", format="%(asctime)s %(name)s %(levelname)s %(message)s")
+
 logger = logging.getLogger("expenses.sql")
+api_logger = logging.getLogger("expenses.api")
 
 app = FastAPI(title="Expenses API", version="0.1.0")
 
+MODEL=os.getenv("EXPENSES_MODEL", "gpt-6.1-sol")
 DB_PATH = "expenses.duckdb"
 MAX_ROWS = 200
 MAX_TURNS = 5
@@ -32,7 +35,7 @@ def _connect() -> duckdb.DuckDBPyConnection:
     return duckdb.connect(
         DB_PATH,
         read_only=True,
-        config={"enable_external_access": False},
+        config={"enable_external_access": False, "lock_configuration": True},
     )
 
 
@@ -116,7 +119,8 @@ class AnalysisRequest(BaseModel):
 class AnalysisResponse(BaseModel):
     status: str
     result: str
-    file_path: str | None = None
+    filename: str | None = None
+    download_url: str | None = None
     timestamp: str
 
 
@@ -155,28 +159,9 @@ Guidelines:
 The current datetime is {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 """
 
-        # Set up MCP server for filesystem access
-        # files_params = {
-        #     "command": "npx",
-        #     "args": ["-y", "@modelcontextprotocol/server-filesystem", SANDBOX_PATH],
-        # }
-
-        # async with MCPServerStdio(
-        #     params=files_params, client_session_timeout_seconds=60
-        # ) as mcp_server_files:
-        #     agent = Agent(
-        #         name="Expenses Agent",
-        #         model="gpt-6.1-sol",
-        #         instructions=instructions,
-        #         tools=[run_sql],
-        #         mcp_servers=[mcp_server_files],
-        #     )
-
-        #     result = await Runner.run(agent, request.task, max_turns=MAX_TURNS)
-
         agent = Agent(
             name="Expenses Agent",
-            model="gpt-6.1-sol",
+            model=MODEL,
             instructions=instructions,
             tools=[run_sql],
         )
@@ -189,35 +174,36 @@ The current datetime is {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         output_file = os.path.join(SANDBOX_PATH, f"analysis_{timestamp}.md")
 
         # Save result to file
-        with open(output_file, "w") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             f.write(result.final_output)
 
+        filename = os.path.basename(output_file)
         return AnalysisResponse(
             status="success",
             result=result.final_output,
-            file_path=output_file,
+            filename=filename,
+            download_url=f"/api/results/{filename}",
             timestamp=timestamp,
         )
 
-    except Exception as e:
+    except Exception:
+        api_logger.exception("Analysis failed for task: %r", request.task)
         raise HTTPException(
             status_code=500,
-            detail=f"Error analyzing expenses: {str(e)}",
+            detail="Error analyzing expenses. Check server logs.",
         )
 
 
 @app.get("/api/results/{filename}")
 async def get_result_file(filename: str):
     """Download a previously generated analysis file."""
-    file_path = os.path.join(SANDBOX_PATH, filename)
 
-    # Security: prevent directory traversal
-    if not Path(file_path).resolve().is_relative_to(Path(SANDBOX_PATH).resolve()):
+    base = Path(SANDBOX_PATH).resolve()
+    file_path = (base / filename).resolve()
+    if not file_path.is_relative_to(base):
         raise HTTPException(status_code=403, detail="Access denied")
-
-    if not os.path.exists(file_path):
+    if not file_path.is_file():
         raise HTTPException(status_code=404, detail="File not found")
-
     return FileResponse(file_path, media_type="text/markdown")
 
 
