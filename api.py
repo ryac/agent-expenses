@@ -11,8 +11,12 @@ from dotenv import load_dotenv
 
 from agents import Agent, Runner, function_tool, trace
 from agents.mcp import MCPServerStdio
+import logging
+import threading
+from guardrails import validate_sql, UnsafeSQLError
 
 load_dotenv()
+logger = logging.getLogger("expenses.sql")
 
 app = FastAPI(title="Expenses API", version="0.1.0")
 
@@ -74,11 +78,17 @@ def run_sql(query: str) -> str:
     GROUP BY) instead of fetching raw rows whenever possible. If the query
     fails, the error message is returned so you can fix the SQL and retry.
     """
-    q = query.strip().rstrip(";").strip()
-    if not q.lower().startswith(("select", "with")) or ";" in q:
-        return json.dumps({"error": "Only a single SELECT or WITH statement is allowed."})
+    q = query.strip()
+    try:
+        validate_sql(q)
+    except UnsafeSQLError as e:
+        logger.warning("REJECTED: %s | %s", e, q)
+        return json.dumps({"error": str(e)})
 
+    logger.info("EXECUTING: %s", q)
     con = _connect()
+    timer = threading.Timer(10, con.interrupt)   # 10s query timeout
+    timer.start()
     try:
         cur = con.execute(q)
         columns = [d[0] for d in cur.description]
@@ -95,6 +105,7 @@ def run_sql(query: str) -> str:
     except Exception as e:
         return json.dumps({"error": str(e)})
     finally:
+        timer.cancel()
         con.close()
 
 
@@ -201,15 +212,15 @@ async def get_result_file(filename: str):
     file_path = os.path.join(SANDBOX_PATH, filename)
 
     # Security: prevent directory traversal
-    if not os.path.abspath(file_path).startswith(os.path.abspath(SANDBOX_PATH)):
+    if not Path(file_path).resolve().is_relative_to(Path(SANDBOX_PATH).resolve()):
         raise HTTPException(status_code=403, detail="Access denied")
 
     if not os.path.exists(file_path):
         raise HTTPException(status_code=404, detail="File not found")
 
-    return FileResponse(file_path, media_type="text/plain")
+    return FileResponse(file_path, media_type="text/markdown")
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)
