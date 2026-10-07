@@ -179,13 +179,14 @@ The current datetime is {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         output_file = os.path.join(SANDBOX_PATH, f"analysis_{timestamp}.md")
 
         # Save result to file
+        contents = f"{result.final_output}\n\n---\nProvider: {os.getenv('EXPENSES_PROVIDER')}\n\nModel: {os.getenv('EXPENSES_MODEL')}\n\nTimestamp: {timestamp}"
         with open(output_file, "w", encoding="utf-8") as f:
-            f.write(result.final_output)
+            f.write(contents)
 
         filename = os.path.basename(output_file)
         return AnalysisResponse(
             status="success",
-            result=result.final_output,
+            result=contents,
             filename=filename,
             download_url=f"/api/results/{filename}",
             timestamp=timestamp,
