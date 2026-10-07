@@ -4,8 +4,6 @@ Shows how to make POST requests to the expense analysis endpoint.
 """
 
 import httpx
-import json
-from datetime import datetime
 
 
 async def analyze_expenses(task: str, base_url: str = "http://localhost:8000"):
@@ -41,8 +39,8 @@ async def main():
     print("\nAnalysis Result:")
     print(result["result"])
 
-    if result.get("file_path"):
-        print(f"\nResult saved to: {result['file_path']}")
+    if result.get("filename"):
+        print(f"\nResult saved to sandbox/{result['filename']} (download: {result['download_url']})")
 
 
 if __name__ == "__main__":
