@@ -26,7 +26,7 @@ app = FastAPI(title="Expenses API", version="0.1.0")
 
 DB_PATH = "expenses.duckdb"
 MAX_ROWS = 200
-MAX_TURNS = 5
+MAX_TURNS = 15
 SANDBOX_PATH = os.path.abspath(os.path.join(os.getcwd(), "sandbox"))
 os.makedirs(SANDBOX_PATH, exist_ok=True)
 
@@ -94,6 +94,7 @@ def run_sql(query: str) -> str:
     timer = threading.Timer(10, con.interrupt)  # 10s query timeout
     timer.start()
     try:
+        print(f">> running SQL query: {q[:100] if len(q) > 100 else q}")
         cur = con.execute(q)
         columns = [d[0] for d in cur.description]
         rows = cur.fetchmany(MAX_ROWS + 1)
@@ -106,7 +107,6 @@ def run_sql(query: str) -> str:
             },
             default=str,
         )
-        print(res)
         return res
     except Exception as e:
         return json.dumps({"error": str(e)})
