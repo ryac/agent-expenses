@@ -8,6 +8,7 @@ PROVIDERS = {
     "grok":       {"base_url": "https://api.x.ai/v1",                                       "key_env": "XAI_API_KEY"},
     "gemini":     {"base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",  "key_env": "GEMINI_API_KEY"},
     "openrouter": {"base_url": "https://openrouter.ai/api/v1",                              "key_env": "OPENROUTER_API_KEY"},
+    "deepseek":   {"base_url": "https://api.deepseek.com",                                  "key_env": "DEEPSEEK_API_KEY"},
     "ollama":     {"base_url": "http://localhost:11434/v1",                                 "key_env": None},
 }
 
