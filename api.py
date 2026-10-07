@@ -175,7 +175,7 @@ The current datetime is {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
             result = await Runner.run(agent, request.task, max_turns=MAX_TURNS)
 
         # Generate output filename with timestamp
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]  # millisecond precision
         output_file = os.path.join(SANDBOX_PATH, f"analysis_{timestamp}.md")
 
         # Save result to file
