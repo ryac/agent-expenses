@@ -6,107 +6,117 @@
 uv run python api.py
 ```
 
-The server will start on `http://localhost:8000`.
-
-You can also use uvicorn directly with auto-reload:
+The server binds to `http://127.0.0.1:8000` (localhost only). To use uvicorn directly with auto-reload:
 
 ```bash
 uv run uvicorn api:app --reload
 ```
 
-## API Endpoints
+The model provider is configured in `.env` (`EXPENSES_PROVIDER`, `EXPENSES_MODEL` and the matching API key). See the [README](README.md#quick-start).
 
-### Health Check
-```bash
-GET /health
+## Endpoints
+
+### `GET /health`
+
+Liveness check.
+
+```json
+{"status": "healthy", "timestamp": "2026-10-07T12:00:00.123456"}
 ```
 
-Returns the server status and current timestamp.
+### `POST /api/analyze`
 
-### Analyze Expenses
-```bash
-POST /api/analyze
-Content-Type: application/json
+Runs the agent on a question and returns a Markdown analysis.
 
-{
-  "task": "Your analysis task here"
-}
+**Request**
+
+```json
+{"task": "What are my top 5 spending categories in 2026?"}
 ```
 
-**Example:**
 ```bash
-curl -X POST http://localhost:8000/api/analyze \
+curl -X POST http://127.0.0.1:8000/api/analyze \
   -H "Content-Type: application/json" \
-  -d '{
-    "task": "Review and analyze my 2026 expenses and tell me how much I'\''m spending on average per month. Make a prediction on how much I will spend for the last quarter of the year (Oct - Dec). Give me an idea of how much I will be spending this entire year."
-  }'
+  -d '{"task": "What are my top 5 spending categories in 2026?"}'
 ```
 
-**Response:**
+**Response (200)**
+
 ```json
 {
   "status": "success",
-  "result": "Analysis results as markdown/text...",
-  "file_path": "/path/to/sandbox/analysis_20261004_120000.txt",
-  "timestamp": "20261004_120000"
+  "result": "# Top 5 spending categories ... (Markdown, including the SQL used)\n\n---\nProvider: openai\n\nModel: gpt-4.1\n\nTimestamp: 20261007_120000_123",
+  "filename": "analysis_20261007_120000_123.md",
+  "download_url": "/api/results/analysis_20261007_120000_123.md",
+  "timestamp": "20261007_120000_123"
 }
 ```
 
-### Get Result File
+- `result` is the full Markdown answer. It includes the original task, the SQL queries used, the assumptions made, and a footer with the provider, model and timestamp.
+- The same content is saved to `sandbox/<filename>`. The timestamp has millisecond precision (`YYYYMMDD_HHMMSS_mmm`) so concurrent requests don't collide.
+- Requests are synchronous and can take several seconds (typically around 10s, longer for multi-step questions). Use a generous client timeout.
+
+**Errors**
+
+| Status | Cause |
+|---|---|
+| `400` | Empty or whitespace-only `task` |
+| `422` | Malformed request body (missing `task`) |
+| `500` | The agent run failed (provider error, rate limit, turn limit exceeded). The response is deliberately generic; details are in `expenses.log` |
+
+### `GET /api/results/{filename}`
+
+Downloads a previously generated analysis (served as `text/markdown`).
+
 ```bash
-GET /api/results/{filename}
+curl http://127.0.0.1:8000/api/results/analysis_20261007_120000_123.md -o result.md
 ```
 
-Download a previously generated analysis file.
+| Status | Cause |
+|---|---|
+| `403` | Path resolves outside the `sandbox/` directory |
+| `404` | File not found |
 
-**Example:**
-```bash
-curl http://localhost:8000/api/results/analysis_20261004_120000.txt > result.txt
-```
+## Python client
 
-## Using the Python Client
-
-You can use the provided `client_example.py` to interact with the API programmatically:
+`client_example.py` provides async helpers, `analyze_expenses(task)` and `get_result_file(filename)`:
 
 ```python
 import asyncio
 from client_example import analyze_expenses
 
-async def main():
-    result = await analyze_expenses(
-        "Review my spending habits over the last 3 months"
-    )
-    print(result)
-
-asyncio.run(main())
+result = asyncio.run(analyze_expenses("How much did I spend on groceries in 2025?"))
+print(result["result"])
+print(result["download_url"])
 ```
 
-Or run the example directly:
+Or run the bundled example:
 
 ```bash
-python client_example.py
+uv run python client_example.py
 ```
 
-## Example Analysis Tasks
+## Example questions
 
-- "Review my spending habits over the last 3 months and provide insights on how I can save money."
-- "What are my top spending categories this year?"
 - "How much did I spend on groceries in 2025?"
+- "What are my top spending categories this year?"
 - "Compare my spending between 2025 and 2026."
-- "What percentage of my income goes to rent?"
+- "What percentage of my 2026 spending went to Entertainment and Travel?"
+- "Review my 2026 spending, project Q4, and estimate the full-year total."
+- "Where could I cut costs in my Food and Coffee spending?"
 
-## Interactive API Documentation
+The data contains expenses only (no income), in SGD, from 2016 to the latest ingested month. Questions outside that scope are answered with what the data supports, with assumptions stated.
 
-Once the server is running, visit:
+## Interactive documentation
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+With the server running:
 
-These provide interactive documentation where you can test the API directly.
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
 
 ## Notes
 
-- Analysis results are stored in the `sandbox/` directory with timestamped filenames
-- The agent has a maximum of 5 turns to complete an analysis
-- SQL queries are limited to read-only access for safety
-- All monetary amounts are in SGD (Singapore Dollars)
+- The agent has a maximum of 15 turns per request.
+- SQL runs through the guardrails in `guardrails.py` against a read-only DuckDB connection, with a 10-second query timeout and a 200-row result cap. See [Guardrails](README.md#guardrails).
+- All monetary amounts are in SGD. Positive values are spending; negative values are money received (e.g. refunds).
+- To measure the agent's quality against this API, see the [evaluation harness](README.md#evaluation-harness).
