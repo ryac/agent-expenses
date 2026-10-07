@@ -15,5 +15,7 @@ data/
 expenses.duckdb
 sandbox/
 expenses.log
+*.ipynb
+.ipynb_checkpoints/
 eval_results/*
 !eval_results/.gitkeep

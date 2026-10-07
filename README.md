@@ -221,8 +221,7 @@ One nuance worth knowing: the validator's table allowlist catches table function
 | `ingest.py`, `schema_comments.py` | Build the DuckDB database and document its schema |
 | `eval_harness.py` | Evaluation harness |
 | `client_example.py`, `API_USAGE.md` | Example client and API notes |
-| `workbench.ipynb` | Original notebook prototype |
 
 ## Privacy
 
-`data/`, `expenses.duckdb`, `sandbox/` (generated analyses), `eval_results/` and `expenses.log` are git-ignored. The code, prompts, golden cases and methodology are public; the financial data and anything derived from it are not.
+`data/`, `expenses.duckdb`, `sandbox/` (generated analyses), `eval_results/`, `expenses.log` and Jupyter notebooks (whose saved outputs can contain query results) are git-ignored. The code, prompts, golden cases and methodology are public; the financial data and anything derived from it are not.
