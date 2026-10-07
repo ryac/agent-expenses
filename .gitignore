@@ -15,3 +15,5 @@ data/
 expenses.duckdb
 sandbox/
 expenses.log
+eval_results/*
+!eval_results/.gitkeep
