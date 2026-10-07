@@ -13,8 +13,10 @@ from agents import Agent, Runner, function_tool, trace
 import logging
 import threading
 from guardrails import validate_sql, UnsafeSQLError
+from provider_registry import build_model
 
-load_dotenv()
+
+load_dotenv(override=True)
 logging.basicConfig(level=logging.INFO, filename="expenses.log", format="%(asctime)s %(name)s %(levelname)s %(message)s")
 
 logger = logging.getLogger("expenses.sql")
@@ -22,7 +24,6 @@ api_logger = logging.getLogger("expenses.api")
 
 app = FastAPI(title="Expenses API", version="0.1.0")
 
-MODEL=os.getenv("EXPENSES_MODEL", "gpt-6.1-sol")
 DB_PATH = "expenses.duckdb"
 MAX_ROWS = 200
 MAX_TURNS = 5
@@ -90,14 +91,14 @@ def run_sql(query: str) -> str:
 
     logger.info("EXECUTING: %s", q)
     con = _connect()
-    timer = threading.Timer(10, con.interrupt)   # 10s query timeout
+    timer = threading.Timer(10, con.interrupt)  # 10s query timeout
     timer.start()
     try:
         cur = con.execute(q)
         columns = [d[0] for d in cur.description]
         rows = cur.fetchmany(MAX_ROWS + 1)
         truncated = len(rows) > MAX_ROWS
-        return json.dumps(
+        res = json.dumps(
             {
                 "columns": columns,
                 "rows": [list(r) for r in rows[:MAX_ROWS]],
@@ -105,6 +106,8 @@ def run_sql(query: str) -> str:
             },
             default=str,
         )
+        print(res)
+        return res
     except Exception as e:
         return json.dumps({"error": str(e)})
     finally:
@@ -156,12 +159,14 @@ Guidelines:
 - State the time period and any assumptions behind your answer.
 - Write your answer as a professional looking analysis including the SQL queries you used and any assumptions, in Markdown format.
 
+In the final output, include the original task as well to keep context.
+
 The current datetime is {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 """
 
         agent = Agent(
             name="Expenses Agent",
-            model=MODEL,
+            model=build_model(),
             instructions=instructions,
             tools=[run_sql],
         )
