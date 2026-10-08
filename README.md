@@ -1,10 +1,10 @@
 # Personal Expenses Agent
 
-A natural-language analytics agent over **ten years of my own real spending data** (2016-2026, 12,000+ transactions). Ask a question in plain English, and the agent writes DuckDB SQL, executes it inside a locked-down read-only sandbox, and returns a Markdown analysis that cites the queries it ran and the assumptions it made.
+A natural-language analytics agent over **ten years of my own, real expense data** (2016-2026, over 12,000 transactions). Ask a question in plain English, and the agent writes DuckDB SQL, executes it inside a locked-down read-only sandbox, and returns a Markdown analysis that cites the queries it ran and the assumptions it made.
 
-The project is deliberately built as an engineering exercise in **making an LLM agent trustworthy**: layered safety guardrails around model-generated SQL, and an automated evaluation harness that scores the agent against ground truth computed independently from the database.
+The project is deliberately built as an engineering exercise in making an LLM agent trustworthy: layered safety guardrails around model-generated SQL, and an automated evaluation harness that scores the agent against ground truth computed independently from the database.
 
-> The repository is public. The financial data, generated analyses and evaluation results are not (see [Privacy](#privacy)).
+> The financial data, generated analyses and full evaluation reports are not part of this repository (see [Privacy](#privacy)). A synthetic sample dataset is included so the project can be run end to end.
 
 ## Features
 
@@ -52,14 +52,21 @@ LLM access goes through the SDK's OpenAI-compatible interface. With `EXPENSES_PR
 
 ## Data
 
-The dataset is my personal ledger: monthly CSV files (`Date, Type, Description, Cost`) from January 2016 to September 2026, amounts in SGD, with 17 spending categories (rent, groceries, food, travel, insurance, and so on). `ingest.py` loads them into a DuckDB table and `schema_comments.py` attaches natural-language comments to the table and columns, which the agent reads as its schema documentation.
+The dataset is real, as it comes from my own personal expenses, stored in Google Sheets and then converted to monthly CSV files covering January 2016 to September 2026. The columns are Date, Type, Description and Cost. Amounts are in SGD, across 17 spending categories including rent, groceries, food, travel, insurance, and others.
+
+The repository ships a synthetic stand-in, `sample_data/` (January 2025 to September 2026, same format and overlapping categories), produced by `scripts/generate_sample_data.py` with a fixed seed. It exists so anyone can run the project and the evaluation harness without my data.
+
+`ingest.py` loads them into a DuckDB table and `schema_comments.py` attaches natural-language comments to the table and columns, which the agent reads as its schema documentation.
 
 ## Quick start
 
 ```bash
 uv sync
 
-# 1. Build the database from data/*.csv (not included in the repo)
+# 1. Build the database from monthly CSVs in data/ (columns: Date, Type, Description, Cost).
+#    My real data is not in the repo. To try the project, start from the synthetic sample
+#    (on a fresh clone: this overwrites any files in data/ with the same names):
+mkdir -p data && cp sample_data/*.csv data/
 uv run python ingest.py
 
 # 2. Configure the model provider in .env
@@ -91,8 +98,8 @@ See [API_USAGE.md](API_USAGE.md) for more examples.
 ### Design
 
 - **Black box.** The harness has no agent code of its own. It POSTs each question to the running API exactly as a real client would, so it evaluates the whole system: prompt, model, tool, guardrails and HTTP layer.
-- **Live ground truth.** Each golden case carries a reference SQL query that the harness runs directly against DuckDB, independent of the agent. Expected values are therefore never hand-typed and stay correct as the data changes.
-- **Deterministic grading.** Checks are programmatic (no LLM-as-judge), so a score is reproducible and a failure always points at a specific check.
+- **Live ground truth.** Each golden case carries a reference SQL query that the harness runs directly against DuckDB, independent of the agent. Expected values are therefore never hand-typed and stay correct as the data changes. The sample dataset covers the same categories and years, so the harness runs on it unchanged.
+- **Deterministic grading.** Checks are programmatic (no LLM-as-judge), so a given response always receives the same verdict and a failure points at a specific check. (The agent's output itself varies between runs; see `--repeats`.)
 
 ### What is tested
 
@@ -139,16 +146,17 @@ uv run python eval_harness.py --repeats 3 --category adversarial --fail-under 0.
 
 | Flag | Purpose |
 |---|---|
-| `--repeats N` | Attempts per case |
-| `--category`, `--id` | Run a subset |
-| `--concurrency`, `--delay` | Parallelism, and a pause after each request to stay under provider rate limits (default 0.5s) |
+| `--repeats N` | Attempts per case, since LLM output varies between runs |
+| `--category`, `--id` | Run a subset by a specific category or case ID |
+| `--concurrency` | Number of requests in flight at once (default 2) |
+| `--delay` | A pause after each request to stay under provider rate limits (default 0.5s) |
 | `--fail-under X` | Exit non-zero if the pass rate is below `X` (CI gating) |
 
 Each run writes two files with a shared timestamp to `eval_results/`: a detailed JSON report (every response, check and latency) and a human-readable `_summary.txt`.
 
 ### Example output
 
-A summary from a full run (one attempt per case). Failures, when there are any, are listed beneath the check breakdown with what was expected and what was missing:
+A summary from a full run (one attempt per case). Failures, when there are any, are listed beneath the check breakdown with what was expected and what was missing, and when an earlier run exists the summary ends with the change in pass rate against it:
 
 ```
 ========================================================================
@@ -171,8 +179,6 @@ By check:
   refused             100%
   db_unchanged        100%
   no_forbidden_text   100%
-
-vs previous run (20261007_160134): +0%
 ========================================================================
 ```
 
@@ -199,9 +205,9 @@ The model writes SQL, so the SQL is treated as untrusted input. Protection is la
 | Query logging | Audit | Every executed and rejected query is written to `expenses.log` |
 | API hygiene | Enforced | Binds to localhost; empty tasks are rejected; errors returned to clients are generic (details stay in the logs); the results download endpoint resolves paths and blocks traversal outside `sandbox/` |
 
-I verified these against the code. Direct tests showed that `DELETE`, `DROP`, `UPDATE`, `ATTACH`, `COPY`, `PRAGMA`, `SET`, stacked statements, a DML statement hidden in a CTE, `read_csv(...)` as a table function, and catalog queries are all rejected by the validator, and that the engine independently refuses writes, file access and configuration changes.
+The guardrails are covered by a test suite (`uv run pytest`). It asserts that `DELETE`, `DROP`, `UPDATE`, `ATTACH`, `COPY`, `PRAGMA`, `SET`, stacked statements, a DML statement hidden in a CTE, `read_csv(...)` as a table function, and catalog queries are all rejected by the validator. It also asserts that the DuckDB engine independently refuses writes, file access and configuration changes with the validator bypassed.
 
-One nuance worth knowing: the validator's table allowlist catches table functions, but a file-reading function used in a scalar position can pass validation. The engine-level `enable_external_access` and `lock_configuration` settings are what stop it, which is why the layers are designed to overlap. The adversarial evaluation cases exercise this path end to end.
+One nuance worth flagging: the validator's table allowlist catches table functions, but a file-reading function used in a scalar position can pass validation (a test pins this down). The engine-level `enable_external_access` and `lock_configuration` settings are what stop it, which is why the layers are designed to overlap. The adversarial evaluation cases exercise this path end to end.
 
 ## Limitations
 
@@ -220,8 +226,10 @@ One nuance worth knowing: the validator's table allowlist catches table function
 | `provider_registry.py` | Model provider selection |
 | `ingest.py`, `schema_comments.py` | Build the DuckDB database and document its schema |
 | `eval_harness.py` | Evaluation harness |
+| `tests/` | Guardrail tests (validator and DuckDB engine settings) |
+| `sample_data/`, `scripts/generate_sample_data.py` | Synthetic expense data and the script that generates it |
 | `client_example.py`, `API_USAGE.md` | Example client and API notes |
 
 ## Privacy
 
-`data/`, `expenses.duckdb`, `sandbox/` (generated analyses), `eval_results/`, `expenses.log` and Jupyter notebooks (whose saved outputs can contain query results) are git-ignored. The code, prompts, golden cases and methodology are public; the financial data and anything derived from it are not.
+For privacy, `data/`, `expenses.duckdb`, `sandbox/` (generated analyses), `eval_results/`, `expenses.log` and Jupyter notebooks (whose saved outputs may contain query results) are git-ignored. The code, prompts, golden cases and methodology are public; the financial data and anything derived from it are not. `sample_data/` is entirely synthetic.
