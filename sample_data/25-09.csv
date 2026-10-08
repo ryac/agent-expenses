@@ -1,0 +1,44 @@
+Date,Type,Description,Cost
+2025-09-02T08:00:00.000Z,Coffee,Iced latte,6.98
+2025-09-02T08:00:00.000Z,Entertainment,Bowling,23.79
+2025-09-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2025-09-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2025-09-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2025-09-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2025-09-03T08:00:00.000Z,Coffee,Kopi,6.30
+2025-09-04T08:00:00.000Z,Coffee,Flat white,3.94
+2025-09-04T08:00:00.000Z,Entertainment,Bowling,14.58
+2025-09-04T08:00:00.000Z,Food,Food delivery,15.43
+2025-09-05T08:00:00.000Z,Travel,Flights and hotel,930.92
+2025-09-06T08:00:00.000Z,Groceries,Cold Storage,18.84
+2025-09-07T08:00:00.000Z,Entertainment,Cinema,12.53
+2025-09-07T08:00:00.000Z,Misc,Household,67.24
+2025-09-07T08:00:00.000Z,Transportation,Ride share,12.23
+2025-09-08T08:00:00.000Z,Food,Food delivery,4.78
+2025-09-08T08:00:00.000Z,Food,Food delivery,33.99
+2025-09-08T08:00:00.000Z,Misc,Gift,64.02
+2025-09-08T08:00:00.000Z,Transportation,Taxi,4.29
+2025-09-09T08:00:00.000Z,Transportation,MRT,17.88
+2025-09-10T08:00:00.000Z,Food,Dinner out,28.93
+2025-09-10T08:00:00.000Z,Groceries,Market,10.74
+2025-09-10T08:00:00.000Z,Groceries,Sheng Siong,69.29
+2025-09-11T08:00:00.000Z,Coffee,Kopi,3.89
+2025-09-12T08:00:00.000Z,Groceries,Cold Storage,15.39
+2025-09-13T08:00:00.000Z,Food,Hawker lunch,12.20
+2025-09-14T08:00:00.000Z,Coffee,Flat white,3.56
+2025-09-15T08:00:00.000Z,Food,Hawker lunch,8.36
+2025-09-18T08:00:00.000Z,Coffee,Flat white,4.55
+2025-09-18T08:00:00.000Z,Groceries,Sheng Siong,51.53
+2025-09-18T08:00:00.000Z,Misc,Gift,48.98
+2025-09-20T08:00:00.000Z,Transportation,Ride share,23.60
+2025-09-21T08:00:00.000Z,Transportation,MRT,21.17
+2025-09-22T08:00:00.000Z,Transportation,Ride share,15.51
+2025-09-22T08:00:00.000Z,Transportation,Taxi,14.52
+2025-09-24T08:00:00.000Z,Food,Dinner out,22.12
+2025-09-24T08:00:00.000Z,Transportation,Bus,22.36
+2025-09-26T08:00:00.000Z,Food,Dinner out,6.80
+2025-09-27T08:00:00.000Z,Food,Dinner out,7.36
+2025-09-27T08:00:00.000Z,Misc,Gift,29.64
+2025-09-30T08:00:00.000Z,Coffee,Kopi,4.21
+2025-09-30T08:00:00.000Z,Food,Food delivery,33.99
+2025-09-30T08:00:00.000Z,Groceries,Sheng Siong,76.10

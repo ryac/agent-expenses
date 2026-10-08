@@ -1,0 +1,52 @@
+Date,Type,Description,Cost
+2025-03-02T08:00:00.000Z,Groceries,NTUC FairPrice,55.90
+2025-03-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2025-03-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2025-03-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2025-03-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2025-03-02T08:00:00.000Z,Transportation,MRT,16.59
+2025-03-03T08:00:00.000Z,Groceries,NTUC FairPrice,63.37
+2025-03-04T08:00:00.000Z,Transportation,MRT,23.74
+2025-03-05T08:00:00.000Z,Coffee,Iced latte,4.13
+2025-03-05T08:00:00.000Z,Transportation,Ride share,4.93
+2025-03-07T08:00:00.000Z,Coffee,Kopi,4.37
+2025-03-07T08:00:00.000Z,Food,Dinner out,8.11
+2025-03-07T08:00:00.000Z,Food,Dinner out,11.40
+2025-03-07T08:00:00.000Z,Transportation,Bus,17.34
+2025-03-08T08:00:00.000Z,Entertainment,Concert,58.81
+2025-03-08T08:00:00.000Z,Food,Hawker lunch,23.20
+2025-03-08T08:00:00.000Z,Groceries,Market,17.83
+2025-03-09T08:00:00.000Z,Groceries,Market,31.39
+2025-03-09T08:00:00.000Z,Transportation,Bus,19.05
+2025-03-10T08:00:00.000Z,Coffee,Kopi,3.41
+2025-03-10T08:00:00.000Z,Food,Food delivery,13.80
+2025-03-10T08:00:00.000Z,Groceries,Cold Storage,87.43
+2025-03-10T08:00:00.000Z,Transportation,Taxi,22.68
+2025-03-11T08:00:00.000Z,Transportation,Bus,16.65
+2025-03-12T08:00:00.000Z,Food,Dinner out,8.89
+2025-03-12T08:00:00.000Z,Food,Hawker lunch,31.26
+2025-03-13T08:00:00.000Z,Food,Cafe brunch,24.82
+2025-03-14T08:00:00.000Z,Food,Dinner out,32.98
+2025-03-14T08:00:00.000Z,Misc,Gift,25.01
+2025-03-17T08:00:00.000Z,Coffee,Iced latte,4.00
+2025-03-17T08:00:00.000Z,Groceries,Cold Storage,12.66
+2025-03-17T08:00:00.000Z,Groceries,NTUC FairPrice,77.81
+2025-03-18T08:00:00.000Z,Transportation,Ride share,14.90
+2025-03-19T08:00:00.000Z,Groceries,NTUC FairPrice,69.33
+2025-03-20T08:00:00.000Z,Food,Hawker lunch,6.27
+2025-03-22T08:00:00.000Z,Coffee,Kopi,6.41
+2025-03-23T08:00:00.000Z,Groceries,Market,20.69
+2025-03-23T08:00:00.000Z,Transportation,Bus,14.55
+2025-03-24T08:00:00.000Z,Entertainment,Concert,56.29
+2025-03-24T08:00:00.000Z,Misc,Pharmacy,63.68
+2025-03-25T08:00:00.000Z,Entertainment,Bowling,58.69
+2025-03-25T08:00:00.000Z,Food,Hawker lunch,4.29
+2025-03-26T08:00:00.000Z,Food,Hawker lunch,24.70
+2025-03-26T08:00:00.000Z,Transportation,MRT,22.68
+2025-03-26T08:00:00.000Z,Travel,Flights and hotel,861.02
+2025-03-27T08:00:00.000Z,Food,Dinner out,22.96
+2025-03-27T08:00:00.000Z,Transportation,Taxi,3.01
+2025-03-27T08:00:00.000Z,Transportation,Taxi,15.40
+2025-03-29T08:00:00.000Z,Coffee,Flat white,4.06
+2025-03-29T08:00:00.000Z,Coffee,Flat white,5.97
+2025-03-29T08:00:00.000Z,Misc,Haircut,6.86

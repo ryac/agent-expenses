@@ -1,0 +1,42 @@
+Date,Type,Description,Cost
+2026-09-01T08:00:00.000Z,Food,Dinner out,16.83
+2026-09-01T08:00:00.000Z,Food,Dinner out,17.79
+2026-09-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2026-09-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2026-09-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2026-09-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2026-09-03T08:00:00.000Z,Food,Cafe brunch,17.36
+2026-09-03T08:00:00.000Z,Food,Dinner out,21.18
+2026-09-03T08:00:00.000Z,Transportation,Bus,12.00
+2026-09-03T08:00:00.000Z,Transportation,Taxi,7.79
+2026-09-05T08:00:00.000Z,Food,Food delivery,26.06
+2026-09-07T08:00:00.000Z,Transportation,Ride share,4.46
+2026-09-08T08:00:00.000Z,Coffee,Kopi,5.08
+2026-09-08T08:00:00.000Z,Transportation,Ride share,15.66
+2026-09-09T08:00:00.000Z,Travel,Flights and hotel,953.20
+2026-09-10T08:00:00.000Z,Transportation,MRT,23.82
+2026-09-10T08:00:00.000Z,Transportation,Taxi,13.34
+2026-09-11T08:00:00.000Z,Food,Dinner out,7.30
+2026-09-11T08:00:00.000Z,Groceries,Market,87.45
+2026-09-11T08:00:00.000Z,Groceries,NTUC FairPrice,60.00
+2026-09-11T08:00:00.000Z,Transportation,Ride share,20.49
+2026-09-12T08:00:00.000Z,Groceries,Market,43.41
+2026-09-13T08:00:00.000Z,Misc,Pharmacy,26.86
+2026-09-14T08:00:00.000Z,Groceries,Cold Storage,76.77
+2026-09-14T08:00:00.000Z,Transportation,Taxi,13.14
+2026-09-15T08:00:00.000Z,Entertainment,Streaming,31.53
+2026-09-17T08:00:00.000Z,Groceries,Sheng Siong,12.40
+2026-09-18T08:00:00.000Z,Food,Food delivery,7.20
+2026-09-19T08:00:00.000Z,Food,Food delivery,6.66
+2026-09-20T08:00:00.000Z,Entertainment,Concert,33.95
+2026-09-20T08:00:00.000Z,Food,Dinner out,28.74
+2026-09-20T08:00:00.000Z,Food,Dinner out,30.78
+2026-09-21T08:00:00.000Z,Food,Cafe brunch,26.93
+2026-09-22T08:00:00.000Z,Coffee,Iced latte,3.68
+2026-09-23T08:00:00.000Z,Food,Hawker lunch,6.54
+2026-09-23T08:00:00.000Z,Misc,Haircut,77.58
+2026-09-24T08:00:00.000Z,Coffee,Kopi,6.62
+2026-09-25T08:00:00.000Z,Food,Dinner out,7.17
+2026-09-26T08:00:00.000Z,Groceries,Market,48.23
+2026-09-26T08:00:00.000Z,Misc,Gift,29.44
+2026-09-27T08:00:00.000Z,Entertainment,Concert,25.02

@@ -1,0 +1,52 @@
+Date,Type,Description,Cost
+2025-06-01T08:00:00.000Z,Food,Hawker lunch,13.12
+2025-06-02T08:00:00.000Z,Coffee,Flat white,5.21
+2025-06-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2025-06-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2025-06-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2025-06-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2025-06-02T08:00:00.000Z,Transportation,Taxi,23.64
+2025-06-03T08:00:00.000Z,Misc,Gift,22.99
+2025-06-04T08:00:00.000Z,Coffee,Flat white,4.18
+2025-06-06T08:00:00.000Z,Coffee,Flat white,3.87
+2025-06-06T08:00:00.000Z,Groceries,Sheng Siong,58.50
+2025-06-07T08:00:00.000Z,Groceries,Sheng Siong,73.42
+2025-06-08T08:00:00.000Z,Food,Hawker lunch,26.36
+2025-06-08T08:00:00.000Z,Groceries,NTUC FairPrice,30.87
+2025-06-08T08:00:00.000Z,Transportation,MRT,14.84
+2025-06-10T08:00:00.000Z,Transportation,Ride share,9.02
+2025-06-11T08:00:00.000Z,Food,Hawker lunch,27.03
+2025-06-11T08:00:00.000Z,Groceries,Sheng Siong,80.19
+2025-06-12T08:00:00.000Z,Coffee,Flat white,4.21
+2025-06-13T08:00:00.000Z,Food,Cafe brunch,13.49
+2025-06-13T08:00:00.000Z,Transportation,Ride share,3.70
+2025-06-13T08:00:00.000Z,Transportation,Ride share,22.90
+2025-06-14T08:00:00.000Z,Insurance,Annual insurance premium,1450.00
+2025-06-14T08:00:00.000Z,Transportation,Bus,19.84
+2025-06-15T08:00:00.000Z,Food,Dinner out,13.51
+2025-06-15T08:00:00.000Z,Groceries,Cold Storage,69.54
+2025-06-15T08:00:00.000Z,Transportation,Taxi,6.24
+2025-06-16T08:00:00.000Z,Coffee,Iced latte,5.90
+2025-06-16T08:00:00.000Z,Groceries,Sheng Siong,22.91
+2025-06-16T08:00:00.000Z,Transportation,MRT,20.91
+2025-06-16T08:00:00.000Z,Transportation,MRT,22.07
+2025-06-17T08:00:00.000Z,Food,Cafe brunch,6.65
+2025-06-17T08:00:00.000Z,Food,Dinner out,17.19
+2025-06-18T08:00:00.000Z,Misc,Household,16.74
+2025-06-19T08:00:00.000Z,Food,Dinner out,18.67
+2025-06-19T08:00:00.000Z,Groceries,Market,35.58
+2025-06-19T08:00:00.000Z,Transportation,Taxi,12.80
+2025-06-20T08:00:00.000Z,Entertainment,Cinema,57.38
+2025-06-21T08:00:00.000Z,Food,Food delivery,17.89
+2025-06-21T08:00:00.000Z,Misc,Gift,24.85
+2025-06-21T08:00:00.000Z,Transportation,MRT,5.49
+2025-06-23T08:00:00.000Z,Coffee,Flat white,5.55
+2025-06-23T08:00:00.000Z,Coffee,Kopi,3.51
+2025-06-24T08:00:00.000Z,Food,Dinner out,14.91
+2025-06-24T08:00:00.000Z,Food,Food delivery,19.15
+2025-06-25T08:00:00.000Z,Coffee,Kopi,5.39
+2025-06-25T08:00:00.000Z,Food,Cafe brunch,25.41
+2025-06-26T08:00:00.000Z,Transportation,Taxi,3.96
+2025-06-27T08:00:00.000Z,Groceries,Sheng Siong,34.43
+2025-06-29T08:00:00.000Z,Food,Dinner out,21.23
+2025-06-30T08:00:00.000Z,Groceries,Market,46.12

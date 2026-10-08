@@ -1,0 +1,47 @@
+Date,Type,Description,Cost
+2025-01-01T08:00:00.000Z,Groceries,Sheng Siong,28.08
+2025-01-02T08:00:00.000Z,Entertainment,Cinema,17.64
+2025-01-02T08:00:00.000Z,Groceries,NTUC FairPrice,15.68
+2025-01-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2025-01-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2025-01-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2025-01-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2025-01-02T08:00:00.000Z,Transportation,Taxi,11.23
+2025-01-03T08:00:00.000Z,Transportation,Bus,23.00
+2025-01-04T08:00:00.000Z,Food,Dinner out,30.27
+2025-01-04T08:00:00.000Z,Misc,Pharmacy,62.64
+2025-01-05T08:00:00.000Z,Entertainment,Bowling,14.55
+2025-01-05T08:00:00.000Z,Food,Cafe brunch,33.67
+2025-01-05T08:00:00.000Z,Groceries,NTUC FairPrice,63.49
+2025-01-05T08:00:00.000Z,Transportation,Bus,19.13
+2025-01-06T08:00:00.000Z,Entertainment,Bowling,39.82
+2025-01-06T08:00:00.000Z,Food,Food delivery,14.55
+2025-01-06T08:00:00.000Z,Misc,Haircut,5.24
+2025-01-07T08:00:00.000Z,Coffee,Kopi,4.07
+2025-01-08T08:00:00.000Z,Food,Dinner out,34.54
+2025-01-08T08:00:00.000Z,Groceries,NTUC FairPrice,54.02
+2025-01-09T08:00:00.000Z,Coffee,Iced latte,5.54
+2025-01-09T08:00:00.000Z,Food,Hawker lunch,27.52
+2025-01-09T08:00:00.000Z,Transportation,Bus,17.75
+2025-01-10T08:00:00.000Z,Food,Dinner out,21.90
+2025-01-11T08:00:00.000Z,Food,Hawker lunch,6.88
+2025-01-11T08:00:00.000Z,Misc,Household,27.01
+2025-01-12T08:00:00.000Z,Coffee,Flat white,4.48
+2025-01-13T08:00:00.000Z,Misc,Haircut,44.68
+2025-01-16T08:00:00.000Z,Transportation,Ride share,22.35
+2025-01-18T08:00:00.000Z,Misc,Household,56.02
+2025-01-18T08:00:00.000Z,Transportation,Taxi,19.18
+2025-01-19T08:00:00.000Z,Transportation,Taxi,6.89
+2025-01-20T08:00:00.000Z,Coffee,Kopi,3.68
+2025-01-20T08:00:00.000Z,Food,Dinner out,29.02
+2025-01-21T08:00:00.000Z,Transportation,Ride share,5.29
+2025-01-23T08:00:00.000Z,Food,Hawker lunch,5.42
+2025-01-23T08:00:00.000Z,Groceries,Market,26.08
+2025-01-24T08:00:00.000Z,Coffee,Flat white,3.65
+2025-01-24T08:00:00.000Z,Food,Food delivery,20.62
+2025-01-27T08:00:00.000Z,Transportation,MRT,7.27
+2025-01-28T08:00:00.000Z,Food,Cafe brunch,30.86
+2025-01-29T08:00:00.000Z,Entertainment,Bowling,28.10
+2025-01-29T08:00:00.000Z,Groceries,NTUC FairPrice,56.42
+2025-01-30T08:00:00.000Z,Coffee,Kopi,5.59
+2025-01-30T08:00:00.000Z,Food,Food delivery,6.44

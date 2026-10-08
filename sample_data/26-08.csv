@@ -1,0 +1,51 @@
+Date,Type,Description,Cost
+2026-08-01T08:00:00.000Z,Food,Cafe brunch,19.68
+2026-08-01T08:00:00.000Z,Food,Hawker lunch,20.50
+2026-08-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2026-08-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2026-08-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2026-08-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2026-08-02T08:00:00.000Z,Transportation,MRT,18.17
+2026-08-03T08:00:00.000Z,Transportation,Ride share,21.44
+2026-08-04T08:00:00.000Z,Coffee,Kopi,3.60
+2026-08-06T08:00:00.000Z,Misc,Gift,47.50
+2026-08-07T08:00:00.000Z,Coffee,Kopi,5.11
+2026-08-08T08:00:00.000Z,Food,Hawker lunch,25.92
+2026-08-09T08:00:00.000Z,Transportation,MRT,6.13
+2026-08-10T08:00:00.000Z,Food,Hawker lunch,19.57
+2026-08-11T08:00:00.000Z,Groceries,Cold Storage,39.15
+2026-08-12T08:00:00.000Z,Food,Hawker lunch,23.15
+2026-08-13T08:00:00.000Z,Coffee,Flat white,4.49
+2026-08-13T08:00:00.000Z,Coffee,Iced latte,5.26
+2026-08-13T08:00:00.000Z,Transportation,Ride share,14.71
+2026-08-14T08:00:00.000Z,Food,Cafe brunch,30.12
+2026-08-14T08:00:00.000Z,Food,Hawker lunch,4.52
+2026-08-18T08:00:00.000Z,Misc,Pharmacy,33.79
+2026-08-19T08:00:00.000Z,Entertainment,Concert,47.61
+2026-08-21T08:00:00.000Z,Food,Hawker lunch,20.24
+2026-08-21T08:00:00.000Z,Groceries,Market,45.79
+2026-08-21T08:00:00.000Z,Groceries,Sheng Siong,29.10
+2026-08-21T08:00:00.000Z,Transportation,Taxi,15.01
+2026-08-22T08:00:00.000Z,Coffee,Iced latte,6.22
+2026-08-22T08:00:00.000Z,Food,Food delivery,24.44
+2026-08-22T08:00:00.000Z,Food,Hawker lunch,27.69
+2026-08-23T08:00:00.000Z,Coffee,Flat white,4.20
+2026-08-23T08:00:00.000Z,Entertainment,Bowling,56.44
+2026-08-23T08:00:00.000Z,Entertainment,Refund: cancelled event,-45.00
+2026-08-24T08:00:00.000Z,Food,Dinner out,20.61
+2026-08-24T08:00:00.000Z,Groceries,Market,23.09
+2026-08-24T08:00:00.000Z,Groceries,Sheng Siong,21.88
+2026-08-24T08:00:00.000Z,Misc,Gift,64.29
+2026-08-27T08:00:00.000Z,Coffee,Iced latte,4.07
+2026-08-27T08:00:00.000Z,Food,Hawker lunch,33.30
+2026-08-27T08:00:00.000Z,Groceries,Cold Storage,48.94
+2026-08-27T08:00:00.000Z,Groceries,Market,87.25
+2026-08-28T08:00:00.000Z,Misc,Haircut,55.78
+2026-08-28T08:00:00.000Z,Transportation,MRT,4.15
+2026-08-28T08:00:00.000Z,Transportation,MRT,17.04
+2026-08-28T08:00:00.000Z,Transportation,MRT,22.58
+2026-08-28T08:00:00.000Z,Transportation,Taxi,2.36
+2026-08-29T08:00:00.000Z,Transportation,Ride share,8.24
+2026-08-30T08:00:00.000Z,Coffee,Flat white,3.43
+2026-08-30T08:00:00.000Z,Transportation,MRT,7.28
+2026-08-30T08:00:00.000Z,Transportation,MRT,17.74

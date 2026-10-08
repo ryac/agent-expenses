@@ -1,0 +1,46 @@
+Date,Type,Description,Cost
+2026-05-01T08:00:00.000Z,Entertainment,Streaming,29.18
+2026-05-01T08:00:00.000Z,Food,Dinner out,21.61
+2026-05-01T08:00:00.000Z,Transportation,Taxi,20.19
+2026-05-02T08:00:00.000Z,Groceries,NTUC FairPrice,41.89
+2026-05-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2026-05-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2026-05-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2026-05-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2026-05-03T08:00:00.000Z,Food,Cafe brunch,20.59
+2026-05-04T08:00:00.000Z,Misc,Haircut,28.01
+2026-05-05T08:00:00.000Z,Food,Hawker lunch,33.90
+2026-05-05T08:00:00.000Z,Transportation,Ride share,9.44
+2026-05-06T08:00:00.000Z,Food,Food delivery,31.35
+2026-05-06T08:00:00.000Z,Food,Hawker lunch,34.91
+2026-05-07T08:00:00.000Z,Food,Dinner out,13.96
+2026-05-07T08:00:00.000Z,Groceries,Cold Storage,75.89
+2026-05-09T08:00:00.000Z,Groceries,Sheng Siong,19.26
+2026-05-09T08:00:00.000Z,Transportation,Bus,20.60
+2026-05-10T08:00:00.000Z,Groceries,NTUC FairPrice,36.40
+2026-05-11T08:00:00.000Z,Transportation,Bus,18.82
+2026-05-12T08:00:00.000Z,Misc,Gift,9.66
+2026-05-13T08:00:00.000Z,Food,Food delivery,9.78
+2026-05-13T08:00:00.000Z,Groceries,Sheng Siong,86.28
+2026-05-13T08:00:00.000Z,Misc,Pharmacy,56.77
+2026-05-15T08:00:00.000Z,Entertainment,Streaming,57.70
+2026-05-15T08:00:00.000Z,Groceries,Sheng Siong,69.28
+2026-05-16T08:00:00.000Z,Food,Hawker lunch,25.12
+2026-05-17T08:00:00.000Z,Transportation,Taxi,3.99
+2026-05-19T08:00:00.000Z,Misc,Household,24.62
+2026-05-19T08:00:00.000Z,Transportation,Bus,6.04
+2026-05-20T08:00:00.000Z,Groceries,Cold Storage,27.88
+2026-05-21T08:00:00.000Z,Coffee,Kopi,5.10
+2026-05-21T08:00:00.000Z,Food,Hawker lunch,32.15
+2026-05-21T08:00:00.000Z,Transportation,Taxi,18.53
+2026-05-22T08:00:00.000Z,Groceries,Cold Storage,60.31
+2026-05-22T08:00:00.000Z,Groceries,Market,81.45
+2026-05-22T08:00:00.000Z,Transportation,MRT,6.25
+2026-05-24T08:00:00.000Z,Food,Dinner out,31.18
+2026-05-24T08:00:00.000Z,Food,Hawker lunch,32.31
+2026-05-26T08:00:00.000Z,Groceries,Cold Storage,31.82
+2026-05-28T08:00:00.000Z,Transportation,Ride share,21.02
+2026-05-29T08:00:00.000Z,Coffee,Flat white,6.40
+2026-05-30T08:00:00.000Z,Coffee,Iced latte,4.14
+2026-05-30T08:00:00.000Z,Food,Cafe brunch,16.61
+2026-05-30T08:00:00.000Z,Food,Food delivery,18.80

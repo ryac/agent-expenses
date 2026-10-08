@@ -1,0 +1,46 @@
+Date,Type,Description,Cost
+2026-04-02T08:00:00.000Z,Food,Hawker lunch,8.25
+2026-04-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2026-04-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2026-04-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2026-04-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2026-04-03T08:00:00.000Z,Groceries,Market,49.35
+2026-04-04T08:00:00.000Z,Groceries,Market,38.60
+2026-04-05T08:00:00.000Z,Food,Cafe brunch,14.17
+2026-04-05T08:00:00.000Z,Groceries,Sheng Siong,67.66
+2026-04-06T08:00:00.000Z,Coffee,Kopi,5.52
+2026-04-07T08:00:00.000Z,Entertainment,Concert,23.95
+2026-04-07T08:00:00.000Z,Groceries,Sheng Siong,53.36
+2026-04-08T08:00:00.000Z,Misc,Pharmacy,62.84
+2026-04-10T08:00:00.000Z,Food,Food delivery,29.29
+2026-04-11T08:00:00.000Z,Food,Food delivery,20.10
+2026-04-11T08:00:00.000Z,Groceries,Sheng Siong,69.91
+2026-04-11T08:00:00.000Z,Transportation,Bus,12.57
+2026-04-12T08:00:00.000Z,Food,Dinner out,24.89
+2026-04-13T08:00:00.000Z,Groceries,NTUC FairPrice,54.76
+2026-04-14T08:00:00.000Z,Transportation,Bus,11.44
+2026-04-15T08:00:00.000Z,Transportation,Taxi,11.63
+2026-04-16T08:00:00.000Z,Misc,Pharmacy,40.99
+2026-04-17T08:00:00.000Z,Food,Food delivery,25.97
+2026-04-17T08:00:00.000Z,Transportation,Bus,14.90
+2026-04-18T08:00:00.000Z,Entertainment,Streaming,43.79
+2026-04-18T08:00:00.000Z,Misc,Pharmacy,26.58
+2026-04-19T08:00:00.000Z,Coffee,Iced latte,6.19
+2026-04-20T08:00:00.000Z,Coffee,Iced latte,4.06
+2026-04-20T08:00:00.000Z,Food,Dinner out,9.04
+2026-04-20T08:00:00.000Z,Food,Dinner out,22.41
+2026-04-20T08:00:00.000Z,Food,Food delivery,19.50
+2026-04-20T08:00:00.000Z,Groceries,NTUC FairPrice,18.55
+2026-04-21T08:00:00.000Z,Coffee,Kopi,5.31
+2026-04-22T08:00:00.000Z,Transportation,Bus,2.73
+2026-04-22T08:00:00.000Z,Transportation,Ride share,14.09
+2026-04-23T08:00:00.000Z,Misc,Gift,56.77
+2026-04-23T08:00:00.000Z,Transportation,MRT,6.39
+2026-04-24T08:00:00.000Z,Coffee,Flat white,5.33
+2026-04-24T08:00:00.000Z,Coffee,Kopi,5.52
+2026-04-24T08:00:00.000Z,Transportation,MRT,18.23
+2026-04-25T08:00:00.000Z,Groceries,Market,38.01
+2026-04-25T08:00:00.000Z,Groceries,Sheng Siong,75.68
+2026-04-25T08:00:00.000Z,Transportation,Ride share,5.40
+2026-04-25T08:00:00.000Z,Transportation,Ride share,22.07
+2026-04-28T08:00:00.000Z,Entertainment,Streaming,40.50

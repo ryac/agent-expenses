@@ -1,0 +1,47 @@
+Date,Type,Description,Cost
+2026-03-01T08:00:00.000Z,Food,Hawker lunch,5.41
+2026-03-01T08:00:00.000Z,Misc,Household,75.89
+2026-03-01T08:00:00.000Z,Travel,Flights and hotel,977.74
+2026-03-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2026-03-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2026-03-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2026-03-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2026-03-04T08:00:00.000Z,Transportation,Taxi,7.56
+2026-03-04T08:00:00.000Z,Transportation,Taxi,12.34
+2026-03-05T08:00:00.000Z,Groceries,Market,49.23
+2026-03-05T08:00:00.000Z,Transportation,MRT,3.16
+2026-03-05T08:00:00.000Z,Transportation,Taxi,13.84
+2026-03-06T08:00:00.000Z,Coffee,Iced latte,4.66
+2026-03-06T08:00:00.000Z,Entertainment,Bowling,59.80
+2026-03-06T08:00:00.000Z,Food,Cafe brunch,9.31
+2026-03-06T08:00:00.000Z,Groceries,Sheng Siong,84.65
+2026-03-07T08:00:00.000Z,Misc,Pharmacy,8.65
+2026-03-08T08:00:00.000Z,Entertainment,Concert,50.67
+2026-03-09T08:00:00.000Z,Food,Cafe brunch,23.69
+2026-03-10T08:00:00.000Z,Food,Hawker lunch,19.58
+2026-03-10T08:00:00.000Z,Misc,Haircut,49.81
+2026-03-11T08:00:00.000Z,Groceries,NTUC FairPrice,44.90
+2026-03-11T08:00:00.000Z,Transportation,Taxi,18.89
+2026-03-12T08:00:00.000Z,Food,Dinner out,30.22
+2026-03-14T08:00:00.000Z,Coffee,Kopi,5.56
+2026-03-15T08:00:00.000Z,Coffee,Flat white,4.36
+2026-03-15T08:00:00.000Z,Coffee,Flat white,5.75
+2026-03-15T08:00:00.000Z,Entertainment,Bowling,53.95
+2026-03-16T08:00:00.000Z,Coffee,Kopi,5.18
+2026-03-17T08:00:00.000Z,Groceries,Cold Storage,32.94
+2026-03-17T08:00:00.000Z,Groceries,Market,71.07
+2026-03-17T08:00:00.000Z,Misc,Haircut,77.50
+2026-03-18T08:00:00.000Z,Food,Dinner out,7.88
+2026-03-19T08:00:00.000Z,Food,Hawker lunch,29.58
+2026-03-20T08:00:00.000Z,Food,Dinner out,30.12
+2026-03-21T08:00:00.000Z,Coffee,Iced latte,4.93
+2026-03-21T08:00:00.000Z,Food,Dinner out,24.19
+2026-03-22T08:00:00.000Z,Groceries,Sheng Siong,18.52
+2026-03-26T08:00:00.000Z,Coffee,Kopi,4.62
+2026-03-27T08:00:00.000Z,Groceries,Cold Storage,70.96
+2026-03-27T08:00:00.000Z,Groceries,NTUC FairPrice,18.28
+2026-03-27T08:00:00.000Z,Misc,Haircut,26.43
+2026-03-28T08:00:00.000Z,Groceries,NTUC FairPrice,76.17
+2026-03-28T08:00:00.000Z,Transportation,Taxi,24.43
+2026-03-30T08:00:00.000Z,Entertainment,Streaming,19.49
+2026-03-31T08:00:00.000Z,Transportation,Ride share,21.88

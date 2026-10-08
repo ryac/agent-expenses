@@ -1,7 +1,7 @@
 [project]
 name = "agent-expenses"
 version = "0.1.0"
-description = "Add your description here"
+description = "Natural-language analytics agent over personal expense data: guardrailed text-to-SQL with an automated evaluation harness."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
@@ -13,3 +13,12 @@ dependencies = [
     "sqlglot>=30.21.0",
     "uvicorn>=0.54.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

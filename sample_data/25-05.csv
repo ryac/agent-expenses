@@ -1,0 +1,52 @@
+Date,Type,Description,Cost
+2025-05-01T08:00:00.000Z,Transportation,Bus,7.49
+2025-05-01T08:00:00.000Z,Transportation,Taxi,15.24
+2025-05-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2025-05-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2025-05-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2025-05-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2025-05-02T08:00:00.000Z,Transportation,Taxi,7.16
+2025-05-03T08:00:00.000Z,Coffee,Kopi,4.71
+2025-05-03T08:00:00.000Z,Transportation,MRT,19.35
+2025-05-06T08:00:00.000Z,Transportation,Taxi,4.49
+2025-05-07T08:00:00.000Z,Food,Food delivery,16.07
+2025-05-07T08:00:00.000Z,Transportation,Ride share,18.09
+2025-05-08T08:00:00.000Z,Groceries,Market,64.90
+2025-05-09T08:00:00.000Z,Coffee,Iced latte,4.31
+2025-05-09T08:00:00.000Z,Food,Food delivery,19.05
+2025-05-09T08:00:00.000Z,Groceries,Market,14.35
+2025-05-10T08:00:00.000Z,Groceries,Cold Storage,30.28
+2025-05-11T08:00:00.000Z,Food,Food delivery,16.89
+2025-05-11T08:00:00.000Z,Groceries,NTUC FairPrice,19.35
+2025-05-13T08:00:00.000Z,Entertainment,Concert,13.80
+2025-05-13T08:00:00.000Z,Food,Dinner out,24.74
+2025-05-13T08:00:00.000Z,Food,Food delivery,20.68
+2025-05-14T08:00:00.000Z,Misc,Haircut,12.92
+2025-05-14T08:00:00.000Z,Misc,Pharmacy,10.17
+2025-05-14T08:00:00.000Z,Transportation,Taxi,21.20
+2025-05-15T08:00:00.000Z,Coffee,Iced latte,4.35
+2025-05-16T08:00:00.000Z,Transportation,MRT,14.97
+2025-05-16T08:00:00.000Z,Transportation,MRT,19.23
+2025-05-17T08:00:00.000Z,Groceries,Market,59.39
+2025-05-18T08:00:00.000Z,Coffee,Flat white,6.63
+2025-05-19T08:00:00.000Z,Coffee,Kopi,5.65
+2025-05-20T08:00:00.000Z,Entertainment,Cinema,49.81
+2025-05-20T08:00:00.000Z,Transportation,MRT,19.89
+2025-05-21T08:00:00.000Z,Misc,Pharmacy,5.95
+2025-05-23T08:00:00.000Z,Entertainment,Concert,15.10
+2025-05-23T08:00:00.000Z,Groceries,Cold Storage,13.27
+2025-05-24T08:00:00.000Z,Food,Cafe brunch,19.14
+2025-05-25T08:00:00.000Z,Entertainment,Streaming,52.51
+2025-05-25T08:00:00.000Z,Food,Food delivery,18.79
+2025-05-25T08:00:00.000Z,Food,Hawker lunch,30.56
+2025-05-25T08:00:00.000Z,Transportation,Taxi,5.86
+2025-05-26T08:00:00.000Z,Food,Food delivery,26.45
+2025-05-26T08:00:00.000Z,Misc,Household,31.04
+2025-05-27T08:00:00.000Z,Food,Food delivery,32.51
+2025-05-27T08:00:00.000Z,Groceries,Sheng Siong,70.80
+2025-05-27T08:00:00.000Z,Misc,Haircut,58.05
+2025-05-28T08:00:00.000Z,Coffee,Iced latte,3.73
+2025-05-29T08:00:00.000Z,Coffee,Iced latte,4.11
+2025-05-31T08:00:00.000Z,Food,Dinner out,13.26
+2025-05-31T08:00:00.000Z,Misc,Pharmacy,52.67
+2025-05-31T08:00:00.000Z,Transportation,Bus,6.59

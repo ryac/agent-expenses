@@ -1,0 +1,46 @@
+Date,Type,Description,Cost
+2025-11-01T08:00:00.000Z,Coffee,Iced latte,3.69
+2025-11-02T08:00:00.000Z,Groceries,NTUC FairPrice,30.31
+2025-11-02T08:00:00.000Z,Health Insurance,Health insurance premium,110.00
+2025-11-02T08:00:00.000Z,Internet,Fibre broadband,32.00
+2025-11-02T08:00:00.000Z,Phone,Mobile plan,28.00
+2025-11-02T08:00:00.000Z,Rent,Monthly rent,2200.00
+2025-11-03T08:00:00.000Z,Entertainment,Bowling,32.11
+2025-11-04T08:00:00.000Z,Food,Hawker lunch,19.42
+2025-11-04T08:00:00.000Z,Groceries,Sheng Siong,63.61
+2025-11-05T08:00:00.000Z,Groceries,Cold Storage,69.86
+2025-11-05T08:00:00.000Z,Transportation,Taxi,6.54
+2025-11-07T08:00:00.000Z,Transportation,Taxi,10.08
+2025-11-10T08:00:00.000Z,Food,Cafe brunch,27.79
+2025-11-11T08:00:00.000Z,Transportation,Bus,3.76
+2025-11-12T08:00:00.000Z,Misc,Household,28.28
+2025-11-13T08:00:00.000Z,Coffee,Iced latte,5.98
+2025-11-13T08:00:00.000Z,Food,Hawker lunch,4.24
+2025-11-14T08:00:00.000Z,Food,Cafe brunch,8.00
+2025-11-15T08:00:00.000Z,Entertainment,Bowling,44.06
+2025-11-15T08:00:00.000Z,Food,Hawker lunch,30.73
+2025-11-15T08:00:00.000Z,Groceries,Market,30.40
+2025-11-15T08:00:00.000Z,Misc,Household,9.27
+2025-11-16T08:00:00.000Z,Food,Dinner out,5.41
+2025-11-18T08:00:00.000Z,Food,Cafe brunch,19.51
+2025-11-19T08:00:00.000Z,Coffee,Iced latte,5.10
+2025-11-19T08:00:00.000Z,Food,Food delivery,21.78
+2025-11-19T08:00:00.000Z,Groceries,NTUC FairPrice,80.43
+2025-11-20T08:00:00.000Z,Coffee,Iced latte,6.33
+2025-11-20T08:00:00.000Z,Transportation,Bus,19.48
+2025-11-21T08:00:00.000Z,Entertainment,Streaming,17.55
+2025-11-21T08:00:00.000Z,Transportation,MRT,6.07
+2025-11-21T08:00:00.000Z,Transportation,MRT,14.20
+2025-11-22T08:00:00.000Z,Groceries,Market,47.82
+2025-11-23T08:00:00.000Z,Food,Food delivery,12.97
+2025-11-24T08:00:00.000Z,Groceries,Sheng Siong,71.70
+2025-11-25T08:00:00.000Z,Food,Dinner out,12.97
+2025-11-25T08:00:00.000Z,Groceries,NTUC FairPrice,36.30
+2025-11-26T08:00:00.000Z,Misc,Pharmacy,49.36
+2025-11-27T08:00:00.000Z,Food,Dinner out,6.23
+2025-11-27T08:00:00.000Z,Misc,Pharmacy,10.75
+2025-11-27T08:00:00.000Z,Transportation,Bus,7.43
+2025-11-28T08:00:00.000Z,Coffee,Flat white,3.97
+2025-11-28T08:00:00.000Z,Food,Hawker lunch,17.52
+2025-11-29T08:00:00.000Z,Entertainment,Streaming,53.21
+2025-11-30T08:00:00.000Z,Coffee,Iced latte,3.35
